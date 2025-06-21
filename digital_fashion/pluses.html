@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <header class="header">
         <div class="header__container">
             <img src="Images/logo/logo.png" alt="Logo" class="header__logo">
@@ -56,7 +55,6 @@
             </h2>
 
             <div class="pluses__items">
-
                 <img class="pluses__img" src="Images/clipart/mannequin-312526.png" alt="манекен">
 
                 <p class="pluses__item">
@@ -69,8 +67,37 @@
                     Если нужен красивый пост в Instagram, больше не нужно покупать реальную вещь.
                     Как примерить цифровой лук – три простых шага
                 </p>
+            </div>
 
+            <div class="contact-form">
+                <form action="/submit-inquiry" method="post">
 
+                    <div class="grid__container">
+                        <div class="form-field">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="phone">Телефон:</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="question">Вопрос:</label>
+                            <textarea id="question" name="question" rows="4" cols="50"></textarea>
+                        </div>
+
+                        <div class="form-button">
+                            <button type="submit">Заказать звонок</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

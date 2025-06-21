@@ -95,7 +95,7 @@
     padding: 2rem;
     margin-top: 2rem;
     text-align: center;
-    background-image: linear-gradient(to right, #dceffda7, #d1f7d398);
+    background-image: linear-gradient(to right, #dceffd8f, #d1f7d398);
 }
 
 .info__title {
@@ -142,7 +142,18 @@
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 15px;
 
-    justify-content: center;
+    img {
+        height: 500px;
+        width: 1000px;
+
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+    }
+
 }
 
 /* секция бренды */
@@ -185,10 +196,26 @@
     margin-bottom: 1.5rem;
 }
 
-.condition__items {}
+.condition__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding-left: 0;
+}
 
-.condition__item {}
+.condition__item {
+    background-color: #ffffff49;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
 
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+}
 
 /* сайт каталог */
 .products {
@@ -223,6 +250,8 @@
     color: #ffffff;
     background-color: #51818c;
     border: 1px solid #46747e;
+
+    transition: background-color 0.3s ease;
 
     &:hover {
         color: #51818c;
@@ -316,19 +345,33 @@
     text-align: center;
     line-height: 60px;
     font-size: 20px;
-    color: #51818c;
-    background-color: #ffffff;
+    background-image: linear-gradient(to right, #beecac98, #bbc4f4a7);
+    color: #000;
     border-top: 1px solid #46747e;
 
+    transition: background-color 0.3s ease;
+
     &:hover {
+        background-color: rgb(182, 182, 182);
         color: #ffffff;
-        background-color: #51818c;
     }
 }
 
-
 /* сайт товара */
+.product__section {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr minmax(auto, 280px) minmax(auto, 1000px) 1fr;
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 30px;
+}
+
 .img__items {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
     img {
         margin: 15px;
         border: 1px solid #46747e;
@@ -337,48 +380,123 @@
 
 .product {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr minmax(auto, 280px) minmax(auto, 1000px) 1fr;
-    align-items: center;
-    row-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 3rem;
+    place-items: start;
 }
 
-.product__title {}
+.product__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
-.product__text {}
-
-.feature-list {}
+.feature-list {
+    list-style-type: "- ";
+}
 
 /* сайт достоинств */
-
-.pluses__img {
-    position: relative;
-    padding: 0px 0px 85% 0px;
-
-}
-
 .pluses__items {
     display: grid;
-    grid-template-columns: 700px 1fr;
-    row-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+    place-items: start;
 }
 
 .pluses__img {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 200px;
-    }
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .pluses__item {
     grid-column: 2/-1;
-    margin-right: 10px;
-    text-align: justify;
-    line-height: 1.5;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: left;
+    hyphens: auto
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.contact-form form {
+    display: grid;
+    gap: 1rem;
+    max-width: 750px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-button button {
+    width: 100%;
+    padding: 10px;
+    background-image: linear-gradient(to right, #beecac98, #bbc4f4a7);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgb(182, 182, 182);
+        color: #ffffff;
+    }
+}
+
+/* сайт услуг */
+.services__img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    border: 1px solid #46747e;
+}
+
+.services__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 2rem;
+    place-items: start;
+}
+
+.services__item {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.services__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    column-gap: 25px;
+}
+
+.services__card {
+    background-color: #ffffff64;
+    border: 1px solid #46747e;
+}
+
+.card__img {
+    height: 130px;
 }
 
 

@@ -7,7 +7,7 @@
 */
 function app() {
   const buttons = document.querySelectorAll('.products__link');
-  const cards = document.querySelectorAll('products__item');
+  const cards = document.querySelectorAll('.products__item');
 
   /**
   * Фильтр элементов
@@ -21,6 +21,7 @@ function app() {
     items.forEach((item) => {
       const isItemFiltered = !item.classList.contains(category);
       const isShowAll = category.toLowerCase() === 'all';
+
       if (isItemFiltered && !isShowAll) {
         item.classList.add('anime');
       } else {
@@ -39,6 +40,7 @@ function app() {
 
   cards.forEach((card) => {
     card.ontransitionend = function () {
+
       if (card.classList.contains('anime')) {
         card.classList.add('hide');
       }
