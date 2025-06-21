@@ -3,7 +3,6 @@
 // фильтр
 app();
 
-
 // кнопка «наверх»
 document.addEventListener("DOMContentLoaded", function () {
     const top = document.getElementById("top");
